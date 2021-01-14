@@ -1,65 +1,28 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Link from 'next/link'
+import queries from '../results.json'
 
-export default function Home() {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+const Queries = () => (
+    <div className='md:flex bg-grey rounded-lg p-24 justify-center font-mono text-lg text-gray-800 text-center bg-teal-200 '>
+        <div className='text-center md:text-left'>
+            <br />
+            <h1 className='font-mono text-3xl text-gray-800 text-center p-20'>WormBase metrics</h1>
+            <ul>
+                {Object.entries(queries).map((value, index) => {
+                    return <li  key={index}>
+                        <div class='grid grid-cols-12 gap-5 hover:bg-teal-500'>
+                            <div class='col-start-1 col-span-5 '>{value[1]['title']}</div>
+                            <div class='col-start-11 col-span-1 text-right'>{value[1]['value']}</div>
+                            <div class='col-start-12 col-span-1 text-right'>
+                                <a href='http://intermine.wormbase.org/tools/wormmine/customQuery.do'>
+                                    <img src='/ic_link_24px.png' /></a>
+                            </div>
+                        </div>
+                    </li>
+                })}
+            </ul>
         </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
     </div>
-  )
-}
+
+);
+
+export default Queries
