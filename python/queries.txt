@@ -84,6 +84,19 @@ https://bit.ly/3r3Cm6w
 
 
 ######### Query 08 ############
+
+<query model="genomic" view="Protein.primaryIdentifier Protein.sequence.length" sortOrder="Protein.primaryIdentifier ASC" >
+  <constraint path="Protein.organism.species" op="=" value="elegans" code="A" />
+</query>
+
+http://intermine.wormbase.org/tools/wormmine/loadQuery.do?skipBuilder=true&query=
+
+
+
+http://intermine.wormbase.org/tools/wormmine/loadQuery.do?skipBuilder=true&query=%3Cquery%20model%3D%22genomic%22%20view%3D%22Protein.primaryIdentifier%20Protein.sequence.length%22%20sortOrder%3D%22Protein.primaryIdentifier%20ASC%22%20%3E%0A%20%20%3Cconstraint%20path%3D%22Protein.organism.species%22%20op%3D%22%3D%22%20value%3D%22elegans%22%20code%3D%22A%22%20%2F%3E%0A%3C%2Fquery%3E%0A&trail=%7Cquery&method=xml
+
+
+
 ######### Query 09 ############
 ######### Query 10 ############
 

@@ -87,5 +87,16 @@ def query_07():
     print(query)
 
     return len(query.rows())
-#     for row in query.rows():
-#         print(row["primaryIdentifier"], row["goAnnotation.qualifier"])
+
+
+def query_08():
+
+
+    query.add_view("primaryIdentifier", "sequence.length")
+    query.add_constraint("organism.species", "=", "elegans", code="A")
+    print(query)
+
+    return len(query.rows())
+
+
+

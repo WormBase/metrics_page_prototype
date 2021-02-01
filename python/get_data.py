@@ -13,6 +13,7 @@ query_title = {
     'query_05': 'All mutated alleles',
     'query_06': 'All GO terms',
     'query_07': 'C. elegans genes with GO annotation'
+    'query_08': 'C. elegans polypeptide sequences'
 }
 
 section = {
