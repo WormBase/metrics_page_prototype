@@ -9,7 +9,7 @@ from intermine.webservice import Service
 query_title = {
     'query_01': 'All live genes',
     'query_02': 'All pseudogenes',
-    'query_03': 'All unccloned genes',
+    'query_03': 'All uncloned genes',
     'query_04': 'All cloned genes (minus pseudogenes)	',
     'query_05': 'All protein coding genes',
     'query_06': 'All non-coding genes',
