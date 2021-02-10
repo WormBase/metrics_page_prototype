@@ -13,7 +13,7 @@ const Queries = () => (
                             <div class='col-start-1 col-span-5 '>{value[1]['title']}</div>
                             <div class='col-start-11 col-span-1 text-right'>{value[1]['value']}</div>
                             <div class='col-start-12 col-span-1 text-right'>
-                                <Link href={value[1]['wormmine']} passHref={true}>
+                                <Link href={value[1]['url']} passHref={true}>
                                     <img src='https://raw.githubusercontent.com/angular/material-icons/master/icons/system_icons/content/res-export/ic_link_24px.svg' /></Link>
                             </div>
                         </div>
