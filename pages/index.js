@@ -10,7 +10,7 @@ const Queries = () => (
                 {Object.entries(queries).map((value, index) => {
                     return <li  key={index}>
                         <div class='grid grid-cols-12 gap-5 hover:bg-teal-500'>
-                            <div class='col-start-1 col-span-5 '>{value[1]['title']}</div>
+                            <div class='col-start-1 col-span-7 '>{value[1]['title']}</div>
                             <div class='col-start-11 col-span-1 text-right'>{value[1]['value']}</div>
                             <div class='col-start-12 col-span-1 text-right'>
                                 <Link href={value[1]['url']} passHref={true}>

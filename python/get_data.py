@@ -13,6 +13,12 @@ query_title = {
     'query_04': 'All cloned genes (minus pseudogenes)	',
     'query_05': 'All protein coding genes',
     'query_06': 'All non-coding genes',
+    'query_07': 'All tRNA genes',
+    'query_08': 'All rRNA genes',
+    'query_09': 'All muRNA genes',
+    'query_10': 'All piRNA genes',
+    'query_11': 'All snRNA genes',
+    'query_12': 'All snoRNA genes'
 }
 
 section = {
@@ -21,7 +27,13 @@ section = {
         'query_03': 'section_01',
         'query_04': 'section_01',
         'query_05': 'section_01',
-        'query_06': 'section_01'
+        'query_06': 'section_01',
+        'query_07': 'section_01',
+        'query_08': 'section_01',
+        'query_09': 'section_01',
+        'query_10': 'section_01',
+        'query_11': 'section_01',
+        'query_12': 'section_01',
 }
 xml = {
 
@@ -31,6 +43,15 @@ xml = {
 'query_04': """<query name="" model="genomic" view="Gene.primaryIdentifier Gene.secondaryIdentifier Gene.symbol" longDescription="" sortOrder="Gene.primaryIdentifier asc" constraintLogic="A and B">   <constraint path="Gene.organism.name" code="A" op="=" value="Caenorhabditis elegans"/>   <constraint path="Gene.biotype" code="B" op="!=" value="SO:0000336"/> </query>""",
 'query_05': """<query name="" model="genomic" view="Gene.primaryIdentifier Gene.secondaryIdentifier Gene.symbol" longDescription="" sortOrder="Gene.primaryIdentifier asc" constraintLogic="A and B">   <constraint path="Gene.organism.name" code="A" op="=" value="Caenorhabditis elegans"/>   <constraint path="Gene.CDSs" code="B" op="IS NOT NULL"/> </query>""",
 'query_06': """<query name="" model="genomic" view="Gene.primaryIdentifier Gene.secondaryIdentifier Gene.symbol" longDescription="" sortOrder="Gene.primaryIdentifier asc" constraintLogic="A and B and C">   <constraint path="Gene.organism.name" code="A" op="=" value="Caenorhabditis elegans"/>   <constraint path="Gene.CDSs" code="B" op="IS NULL"/>   <constraint path="Gene.biotype" code="C" op="!=" value="SO:0000336"/> </query>""",
+'query_07': """<query name="" model="genomic" view="Gene.primaryIdentifier Gene.secondaryIdentifier Gene.symbol" longDescription="" sortOrder="Gene.primaryIdentifier asc" constraintLogic="A and B">   <constraint path="Gene.organism.name" code="A" op="=" value="Caenorhabditis elegans"/>   <constraint path="Gene.biotype" code="B" op="=" value="SO:0001272"/> </query>""",
+'query_08': """<query name="" model="genomic" view="Gene.primaryIdentifier Gene.secondaryIdentifier Gene.symbol" longDescription="" sortOrder="Gene.primaryIdentifier asc" constraintLogic="A and B">   <constraint path="Gene.organism.name" code="A" op="=" value="Caenorhabditis elegans"/>   <constraint path="Gene.biotype" code="B" op="=" value="SO:0001637"/> </query>""",
+'query_09': """<query name="" model="genomic" view="Gene.primaryIdentifier Gene.secondaryIdentifier Gene.symbol" longDescription="" sortOrder="Gene.primaryIdentifier asc" constraintLogic="A and B">   <constraint path="Gene.organism.name" code="A" op="=" value="Caenorhabditis elegans"/>   <constraint path="Gene.biotype" code="B" op="=" value="SO:0001265"/> </query>""",
+'query_10': """<query name="" model="genomic" view="Gene.primaryIdentifier Gene.secondaryIdentifier Gene.symbol" longDescription="" sortOrder="Gene.primaryIdentifier asc" constraintLogic="A and B">   <constraint path="Gene.organism.name" code="A" op="=" value="Caenorhabditis elegans"/>   <constraint path="Gene.biotype" code="B" op="=" value="SO:0001638"/> </query>	""",
+'query_11': """<query name="" model="genomic" view="Gene.primaryIdentifier Gene.secondaryIdentifier Gene.symbol" longDescription="" sortOrder="Gene.primaryIdentifier asc" constraintLogic="A and B">   <constraint path="Gene.organism.name" code="A" op="=" value="Caenorhabditis elegans"/>   <constraint path="Gene.biotype" code="B" op="=" value="SO:0001268"/> </query>""",
+'query_12': """<query name="" model="genomic" view="Gene.primaryIdentifier Gene.secondaryIdentifier Gene.symbol" longDescription="" sortOrder="Gene.primaryIdentifier asc" constraintLogic="A and B">   <constraint path="Gene.organism.name" code="A" op="=" value="Caenorhabditis elegans"/>   <constraint path="Gene.biotype" code="B" op="=" value="SO:0001267"/> </query>""",
+
+
+
 }
 
 # %3Cquery%20model%3D%22genomic%22%20view%3D%22RNAi.primaryIdentifier%20RNAi.inhibitsGene.primaryIdentifier%20RNAi.inhibitsGene.secondaryIdentifier%20RNAi.inhibitsGene.symbol%20RNAi.organism.name%20RNAi.strain.primaryIdentifier%22%20sortOrder%3D%22RNAi.primaryIdentifier%20ASC%22%20name%3D%22rnai_phenotype%22%20%3E%0A%20%20%3Cjoin%20path%3D%22RNAi.organism%22%20style%3D%22OUTER%22%2F%3E%0A%20%20%3Cjoin%20path%3D%22RNAi.strain%22%20style%3D%22OUTER%22%2F%3E%0A%20%20%3Cconstraint%20path%3D%22RNAi.phenotype_not_observed.identifier%22%20op%3D%22%3D%22%20value%3D%22WBPhenotype%3A0000535%22%20code%3D%22A%22%20%2F%3E%0A%3C%2Fquery%3E%0A&trail=%7Cquery&method=xml
@@ -43,7 +64,6 @@ def run_queries():
             if not item.__name__ in ['assert_result', 'Service', 'assert_greater', 'save_txt_file']:
                 time.sleep(1)
                 yield x, item()
-
 
 
 if __name__ == '__main__':

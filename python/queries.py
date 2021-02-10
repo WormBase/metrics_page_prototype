@@ -77,27 +77,66 @@ def query_06():
 
     return len(query.rows())
 
-# def query_07():
-#
-#     # C. elegans Genes with GO
-#     query = service.new_query("Gene")
-#     query.add_view("primaryIdentifier", "goAnnotation.qualifier")
-#     query.add_constraint("primaryIdentifier", "IS NOT NULL", code = "A")
-#     query.add_constraint("organism.species", "=", "elegans", code = "B")
-#     query.outerjoin("goAnnotation")
-#     print(query)
-#
-#     return len(query.rows())
-#
-#
-# def query_08():
-#
-#
-#     query.add_view("primaryIdentifier", "sequence.length")
-#     query.add_constraint("organism.species", "=", "elegans", code="A")
-#     print(query)
-#
-#     return len(query.rows())
-#
+
+def query_07():
+
+    query = service.new_query("Gene")
+    query.add_view("primaryIdentifier", "secondaryIdentifier", "symbol")
+    query.add_constraint("organism.name", "=", "Caenorhabditis elegans", code="A")
+    query.add_constraint("biotype", "=", "SO:0001272", code="B")
+
+    return len(query.rows())
+
+
+def query_08():
+
+
+    query = service.new_query("Gene")
+    query.add_view("primaryIdentifier", "secondaryIdentifier", "symbol")
+    query.add_constraint("organism.name", "=", "Caenorhabditis elegans", code="A")
+    query.add_constraint("biotype", "=", "SO:0001637", code="B")
+
+    return len(query.rows())
+
+
+def query_09():
+
+    query = service.new_query("Gene")
+    query.add_view("primaryIdentifier", "secondaryIdentifier", "symbol")
+    query.add_constraint("organism.name", "=", "Caenorhabditis elegans", code="A")
+    query.add_constraint("biotype", "=", "SO:0001265", code="B")
+
+    return len(query.rows())
+
+def query_10():
+
+    query = service.new_query("Gene")
+    query.add_view("primaryIdentifier", "secondaryIdentifier", "symbol")
+    query.add_constraint("organism.name", "=", "Caenorhabditis elegans", code="A")
+    query.add_constraint("biotype", "=", "SO:0001638", code="B")
+
+    return len(query.rows())
+
+def query_11():
+
+    query = service.new_query("Gene")
+    query.add_view("primaryIdentifier", "secondaryIdentifier", "symbol")
+    query.add_constraint("organism.name", "=", "Caenorhabditis elegans", code="A")
+    query.add_constraint("biotype", "=", "SO:0001638", code="B")
+
+    return len(query.rows())
+
+def query_11():
+
+    query = service.new_query("Gene")
+    query.add_view("primaryIdentifier", "secondaryIdentifier", "symbol")
+    query.add_constraint("organism.name", "=", "Caenorhabditis elegans", code="A")
+    query.add_constraint("biotype", "=", "SO:0001267", code="B")
+
+    return len(query.rows())
+
+
+
+
 
 
