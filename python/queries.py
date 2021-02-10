@@ -72,7 +72,8 @@ def query_06():
     query = service.new_query("Gene")
     query.add_view("primaryIdentifier", "secondaryIdentifier", "symbol")
     query.add_constraint("organism.name", "=", "Caenorhabditis elegans", code="A")
-    query.add_constraint("CDSs", "IS NOT NULL", code="B")
+    query.add_constraint("CDSs", "IS NULL", code="B")
+    query.add_constraint("biotype", "!=", "SO:0000336", code="C")
 
     return len(query.rows())
 
