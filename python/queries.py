@@ -126,7 +126,7 @@ def query_11():
 
     return len(query.rows())
 
-def query_11():
+def query_12():
 
     query = service.new_query("Gene")
     query.add_view("primaryIdentifier", "secondaryIdentifier", "symbol")
@@ -135,8 +135,83 @@ def query_11():
 
     return len(query.rows())
 
+def query_13():
+
+    query = service.new_query("Gene")
+    query.add_view("primaryIdentifier", "secondaryIdentifier", "symbol")
+    query.add_constraint("organism.name", "=", "Caenorhabditis elegans", code="A")
+    query.add_constraint("biotype", "=", "SO:0001641", code="B")
+
+    return len(query.rows())
+
+def query_14():
+
+    query = service.new_query("Gene")
+    query.add_view("primaryIdentifier", "secondaryIdentifier", "symbol")
+    query.add_constraint("organism.name", "=", "Caenorhabditis elegans", code="A")
+    query.add_constraint("biotype", "=", "SO:0002182", code="B")
+
+    return len(query.rows())
+
+def query_15():
+
+    query = service.new_query("Gene")
+    query.add_view("primaryIdentifier", "secondaryIdentifier", "symbol")
+    query.add_constraint("organism.name", "=", "Caenorhabditis elegans", code="A")
+    query.add_constraint("biotype", "=", "SO:0001266", code="B")
+
+    return len(query.rows())
+
+def query_16():
+
+    query = service.new_query("Gene")
+    query.add_view("primaryIdentifier", "secondaryIdentifier", "symbol")
+    query.add_constraint("organism.name", "=", "Caenorhabditis elegans", code="A")
+    query.add_constraint("biotype", "=", "SO:0001263", code="B")
+
+    return len(query.rows())
+
+def query_17():
+
+    query = service.new_query("Gene")
+    query.add_view("primaryIdentifier", "secondaryIdentifier", "symbol")
+    query.add_constraint("organism.name", "=", "Caenorhabditis elegans", code="A")
+    query.add_constraint("goAnnotation", "IS NOT NULL", code="B")
+
+    return len(query.rows())
+
+def query_18():
+
+    query = service.new_query("Gene")
+    query.add_view("primaryIdentifier", "secondaryIdentifier", "symbol")
+    query.add_constraint("organism.name", "=", "Caenorhabditis elegans", code="A")
+    query.add_constraint("goAnnotation.qualifier", "!=", " NOT|enables", code="B")
+    query.add_constraint("goAnnotation.qualifier", "!=", " NOT|enables", code="C")
+    query.add_constraint("goAnnotation.evidence.code.name", "=", "Inferred from Direct Assay", code="D")
+    query.add_constraint("goAnnotation.evidence.code.name", "=", "Inferred from Experiment", code="E")
+    query.add_constraint("goAnnotation.evidence.code.name", "=", "Inferred from Expression Pattern ", code="F")
+    query.add_constraint("goAnnotation.evidence.code.name", "=", "Inferred from Genetic Interaction", code="G")
+    query.add_constraint("goAnnotation.evidence.code.name", "=", "Inferred from High Throughput Direct Assay", code="H")
+    query.add_constraint("goAnnotation.evidence.code.name", "=", "Inferred from High Throughput Experiment", code="I")
+    query.add_constraint("goAnnotation.evidence.code.name", "=", "Inferred from High Throughput Expression Pattern", code="J")
+    query.add_constraint("goAnnotation.evidence.code.name", "=", "Inferred from Hight Throughput Mutant Phenotype", code="K")
+    query.add_constraint("goAnnotation.evidence.code.name", "=", "Inferred from Mutant Phenotype", code="L")
+    query.add_constraint("goAnnotation.evidence.code.name", "=", "Inferred from Physical Interaction", code="M")
+    query.add_constraint("goAnnotation.evidence.code.name", "=", "nferred from High Throughput Genetic Interaction", code="N")
+    query.set_logic("A and B and C and (D or E or F or G or H or I or J or K or L or M or N)")
+
+    return len(query.rows())
+
+def query_19():
+
+    pass
 
 
+def query_20():
 
+    query = service.new_query("Chromosome")
+    query.add_view("primaryIdentifier")
+    query.add_constraint("organism.name", "=", "Caenorhabditis elegans", code="A")
 
+    return len(query.rows())
 

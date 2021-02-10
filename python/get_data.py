@@ -18,7 +18,16 @@ query_title = {
     'query_09': 'All muRNA genes',
     'query_10': 'All piRNA genes',
     'query_11': 'All snRNA genes',
-    'query_12': 'All snoRNA genes'
+    'query_12': 'All snoRNA genes',
+    'query_13': 'All lincRNA genes',
+    'query_14': 'All asRNA genes',
+    'query_15': 'All scRNA genes',
+    'query_16': 'All unclassified ncRNA genes',
+    'query_17': 'All genes with GO annotation',
+    'query_18': 'All genes with GO experimental evidence',
+    'query_19': 'All genes with phenotype',
+    'query_20': 'All chromosomes (including mitochondrial)',
+
 }
 
 section = {
@@ -34,6 +43,15 @@ section = {
         'query_10': 'section_01',
         'query_11': 'section_01',
         'query_12': 'section_01',
+        'query_13': 'section_01',
+        'query_14': 'section_01',
+        'query_15': 'section_01',
+        'query_16': 'section_01',
+        'query_17': 'section_01',
+        'query_18': 'section_01',
+        'query_19': 'section_01',
+        'query_20': 'section_01',
+
 }
 xml = {
 
@@ -49,8 +67,14 @@ xml = {
 'query_10': """<query name="" model="genomic" view="Gene.primaryIdentifier Gene.secondaryIdentifier Gene.symbol" longDescription="" sortOrder="Gene.primaryIdentifier asc" constraintLogic="A and B">   <constraint path="Gene.organism.name" code="A" op="=" value="Caenorhabditis elegans"/>   <constraint path="Gene.biotype" code="B" op="=" value="SO:0001638"/> </query>	""",
 'query_11': """<query name="" model="genomic" view="Gene.primaryIdentifier Gene.secondaryIdentifier Gene.symbol" longDescription="" sortOrder="Gene.primaryIdentifier asc" constraintLogic="A and B">   <constraint path="Gene.organism.name" code="A" op="=" value="Caenorhabditis elegans"/>   <constraint path="Gene.biotype" code="B" op="=" value="SO:0001268"/> </query>""",
 'query_12': """<query name="" model="genomic" view="Gene.primaryIdentifier Gene.secondaryIdentifier Gene.symbol" longDescription="" sortOrder="Gene.primaryIdentifier asc" constraintLogic="A and B">   <constraint path="Gene.organism.name" code="A" op="=" value="Caenorhabditis elegans"/>   <constraint path="Gene.biotype" code="B" op="=" value="SO:0001267"/> </query>""",
-
-
+'query_13': """<query name="" model="genomic" view="Gene.primaryIdentifier Gene.secondaryIdentifier Gene.symbol" longDescription="" sortOrder="Gene.primaryIdentifier asc" constraintLogic="A and B">   <constraint path="Gene.organism.name" code="A" op="=" value="Caenorhabditis elegans"/>   <constraint path="Gene.biotype" code="B" op="=" value="SO:0001641"/> </query>""",
+'query_14': """<query name="" model="genomic" view="Gene.primaryIdentifier Gene.secondaryIdentifier Gene.symbol" longDescription="" sortOrder="Gene.primaryIdentifier asc" constraintLogic="A and B">   <constraint path="Gene.organism.name" code="A" op="=" value="Caenorhabditis elegans"/>   <constraint path="Gene.biotype" code="B" op="=" value="SO:0002182"/> </query>""",
+'query_15': """<query name="" model="genomic" view="Gene.primaryIdentifier Gene.secondaryIdentifier Gene.symbol" longDescription="" sortOrder="Gene.primaryIdentifier asc" constraintLogic="A and B">   <constraint path="Gene.organism.name" code="A" op="=" value="Caenorhabditis elegans"/>   <constraint path="Gene.biotype" code="B" op="=" value="SO:0001266"/> </query>""",
+'query_16': """<query name="" model="genomic" view="Gene.primaryIdentifier Gene.secondaryIdentifier Gene.symbol" longDescription="" sortOrder="Gene.primaryIdentifier asc" constraintLogic="A and B">   <constraint path="Gene.organism.name" code="A" op="=" value="Caenorhabditis elegans"/>   <constraint path="Gene.biotype" code="B" op="=" value="SO:0001263"/> </query>""",
+'query_17': """<query name="" model="genomic" view="Gene.primaryIdentifier Gene.secondaryIdentifier Gene.symbol" longDescription="" sortOrder="Gene.primaryIdentifier asc" constraintLogic="A and B">   <constraint path="Gene.organism.name" code="A" op="=" value="Caenorhabditis elegans"/>   <constraint path="Gene.goAnnotation" code="B" op="IS NOT NULL"/> </query>""",
+'query_18': """<query name="" model="genomic" view="Gene.primaryIdentifier Gene.secondaryIdentifier Gene.symbol" longDescription="" sortOrder="Gene.primaryIdentifier asc" constraintLogic="A and B and C and (D or E or F or G or H or I or J or K or L or M or N)"> <constraint path="Gene.organism.name" code="A" op="=" value="Caenorhabditis elegans"/> <constraint path="Gene.goAnnotation.qualifier" code="B" op="!=" value=" NOT|enables"/> <constraint path="Gene.goAnnotation.qualifier" code="C" op="!=" value=" NOT|enables"/> <constraint path="Gene.goAnnotation.evidence.code.name" code="D" op="=" value="Inferred from Direct Assay"/> <constraint path="Gene.goAnnotation.evidence.code.name" code="E" op="=" value="Inferred from Experiment"/> <constraint path="Gene.goAnnotation.evidence.code.name" code="F" op="=" value="Inferred from Expression Pattern "/> <constraint path="Gene.goAnnotation.evidence.code.name" code="G" op="=" value="Inferred from Genetic Interaction"/> <constraint path="Gene.goAnnotation.evidence.code.name" code="H" op="=" value="Inferred from High Throughput Direct Assay"/> <constraint path="Gene.goAnnotation.evidence.code.name" code="I" op="=" value="Inferred from High Throughput Experiment"/> <constraint path="Gene.goAnnotation.evidence.code.name" code="J" op="=" value="Inferred from High Throughput Expression Pattern"/> <constraint path="Gene.goAnnotation.evidence.code.name" code="K" op="=" value="Inferred from Hight Throughput Mutant Phenotype"/> <constraint path="Gene.goAnnotation.evidence.code.name" code="L" op="=" value="Inferred from Mutant Phenotype"/> <constraint path="Gene.goAnnotation.evidence.code.name" code="M" op="=" value="Inferred from Physical Interaction"/> <constraint path="Gene.goAnnotation.evidence.code.name" code="N" op="=" value="nferred from High Throughput Genetic Interaction"/> </query>""",
+'query_19': """ """,
+'query_20': """<query name="" model="genomic" view="Chromosome.primaryIdentifier" longDescription="" sortOrder="Chromosome.primaryIdentifier asc">   <constraint path="Chromosome.organism.name" op="=" value="Caenorhabditis elegans"/> </query>""",
 
 }
 
