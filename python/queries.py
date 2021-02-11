@@ -122,7 +122,7 @@ def query_11():
     query = service.new_query("Gene")
     query.add_view("primaryIdentifier", "secondaryIdentifier", "symbol")
     query.add_constraint("organism.name", "=", "Caenorhabditis elegans", code="A")
-    query.add_constraint("biotype", "=", "SO:0001638", code="B")
+    query.add_constraint("biotype", "=", "SO:0001268", code="B")
 
     return len(query.rows())
 

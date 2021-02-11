@@ -15,7 +15,7 @@ query_title = {
     'query_06': 'All non-coding genes',
     'query_07': 'All tRNA genes',
     'query_08': 'All rRNA genes',
-    'query_09': 'All muRNA genes',
+    'query_09': 'All miRNA genes',
     'query_10': 'All piRNA genes',
     'query_11': 'All snRNA genes',
     'query_12': 'All snoRNA genes',
