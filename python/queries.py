@@ -215,3 +215,28 @@ def query_20():
 
     return len(query.rows())
 
+
+def query_21():
+
+    query = service.new_query("Protein")
+    query.add_view("primaryIdentifier", "symbol")
+    query.add_constraint("organism.name", "=", "Caenorhabditis elegans", code="A")
+
+    return len(query.rows())
+
+
+def query_22():
+
+    query = service.new_query("Protein")
+    query.add_view("primaryIdentifier", "symbol", "sequence.residues")
+    query.add_constraint("organism.name", "=", "Caenorhabditis elegans", code="A")
+
+    return len(query.rows())
+
+def query_23():
+
+    query = service.new_query("Strain")
+    query.add_view("primaryIdentifier", "name")
+    query.add_constraint("species", "=", "Caenorhabditis elegans", code="A")
+
+    return len(query.rows())

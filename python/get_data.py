@@ -27,7 +27,9 @@ query_title = {
     'query_18': 'All genes with GO experimental evidence',
     'query_19': 'All genes with phenotype',
     'query_20': 'All chromosomes (including mitochondrial)',
-
+    'query_21': 'All distinct proteins',
+    'query_22': 'All protein sequences',
+    'query_23': 'All strains',
 }
 
 section = {
@@ -51,6 +53,9 @@ section = {
         'query_18': 'section_01',
         'query_19': 'section_01',
         'query_20': 'section_01',
+        'query_21': 'section_01',
+        'query_22': 'section_01',
+        'query_23': 'section_01',
 
 }
 xml = {
@@ -75,6 +80,9 @@ xml = {
 'query_18': """<query name="" model="genomic" view="Gene.primaryIdentifier Gene.secondaryIdentifier Gene.symbol" longDescription="" sortOrder="Gene.primaryIdentifier asc" constraintLogic="A and B and C and (D or E or F or G or H or I or J or K or L or M or N)"> <constraint path="Gene.organism.name" code="A" op="=" value="Caenorhabditis elegans"/> <constraint path="Gene.goAnnotation.qualifier" code="B" op="!=" value=" NOT|enables"/> <constraint path="Gene.goAnnotation.qualifier" code="C" op="!=" value=" NOT|enables"/> <constraint path="Gene.goAnnotation.evidence.code.name" code="D" op="=" value="Inferred from Direct Assay"/> <constraint path="Gene.goAnnotation.evidence.code.name" code="E" op="=" value="Inferred from Experiment"/> <constraint path="Gene.goAnnotation.evidence.code.name" code="F" op="=" value="Inferred from Expression Pattern "/> <constraint path="Gene.goAnnotation.evidence.code.name" code="G" op="=" value="Inferred from Genetic Interaction"/> <constraint path="Gene.goAnnotation.evidence.code.name" code="H" op="=" value="Inferred from High Throughput Direct Assay"/> <constraint path="Gene.goAnnotation.evidence.code.name" code="I" op="=" value="Inferred from High Throughput Experiment"/> <constraint path="Gene.goAnnotation.evidence.code.name" code="J" op="=" value="Inferred from High Throughput Expression Pattern"/> <constraint path="Gene.goAnnotation.evidence.code.name" code="K" op="=" value="Inferred from Hight Throughput Mutant Phenotype"/> <constraint path="Gene.goAnnotation.evidence.code.name" code="L" op="=" value="Inferred from Mutant Phenotype"/> <constraint path="Gene.goAnnotation.evidence.code.name" code="M" op="=" value="Inferred from Physical Interaction"/> <constraint path="Gene.goAnnotation.evidence.code.name" code="N" op="=" value="nferred from High Throughput Genetic Interaction"/> </query>""",
 'query_19': """ """,
 'query_20': """<query name="" model="genomic" view="Chromosome.primaryIdentifier" longDescription="" sortOrder="Chromosome.primaryIdentifier asc">   <constraint path="Chromosome.organism.name" op="=" value="Caenorhabditis elegans"/> </query>""",
+'query_21': """<query name="" model="genomic" view="Protein.primaryIdentifier Protein.symbol" longDescription="" sortOrder="Protein.primaryIdentifier asc">   <constraint path="Protein.organism.name" op="=" value="Caenorhabditis elegans"/> </query>""",
+'query_22': """<query name="" model="genomic" view="Protein.primaryIdentifier Protein.symbol Protein.sequence.residues" longDescription="" sortOrder="Protein.primaryIdentifier asc">   <constraint path="Protein.organism.name" op="=" value="Caenorhabditis elegans"/> </query>""",
+'query_23': """<query name="" model="genomic" view="Strain.primaryIdentifier Strain.name" longDescription="" sortOrder="Strain.primaryIdentifier asc">   <constraint path="Strain.species" op="=" value="Caenorhabditis elegans"/> </query>"""
 
 }
 
