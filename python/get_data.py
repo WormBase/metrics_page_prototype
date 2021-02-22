@@ -30,6 +30,9 @@ query_title = {
     'query_21': 'All distinct proteins',
     'query_22': 'All protein sequences',
     'query_23': 'All strains',
+    'query_24': 'All alleles',
+    'query_25': 'All SNPs',
+    'query_26': 'All phenotypic alleles',
 }
 
 section = {
@@ -56,6 +59,9 @@ section = {
         'query_21': 'section_01',
         'query_22': 'section_01',
         'query_23': 'section_01',
+        'query_24': 'section_01',
+        'query_25': 'section_01',
+        'query_26': 'section_01',
 
 }
 xml = {
@@ -82,8 +88,10 @@ xml = {
 'query_20': """<query name="" model="genomic" view="Chromosome.primaryIdentifier" longDescription="" sortOrder="Chromosome.primaryIdentifier asc">   <constraint path="Chromosome.organism.name" op="=" value="Caenorhabditis elegans"/> </query>""",
 'query_21': """<query name="" model="genomic" view="Protein.primaryIdentifier Protein.symbol" longDescription="" sortOrder="Protein.primaryIdentifier asc">   <constraint path="Protein.organism.name" op="=" value="Caenorhabditis elegans"/> </query>""",
 'query_22': """<query name="" model="genomic" view="Protein.primaryIdentifier Protein.symbol Protein.sequence.residues" longDescription="" sortOrder="Protein.primaryIdentifier asc">   <constraint path="Protein.organism.name" op="=" value="Caenorhabditis elegans"/> </query>""",
-'query_23': """<query name="" model="genomic" view="Strain.primaryIdentifier Strain.name" longDescription="" sortOrder="Strain.primaryIdentifier asc">   <constraint path="Strain.species" op="=" value="Caenorhabditis elegans"/> </query>"""
-
+'query_23': """<query name="" model="genomic" view="Strain.primaryIdentifier Strain.name" longDescription="" sortOrder="Strain.primaryIdentifier asc">   <constraint path="Strain.species" op="=" value="Caenorhabditis elegans"/> </query>""",
+'query_24': """<query name="" model="genomic" view="Allele.primaryIdentifier Allele.symbol" longDescription="" sortOrder="Allele.primaryIdentifier asc"><constraint path="Allele.species" op="=" value="Caenorhabditis elegans"/></query>""",
+'query_25': """<query name="" model="genomic" view="Allele.primaryIdentifier Allele.symbol" longDescription="" sortOrder="Allele.primaryIdentifier asc" constraintLogic="A and (B or C)">   <constraint path="Allele.species" code="A" op="=" value="Caenorhabditis elegans"/>   <constraint path="Allele.type" code="B" op="=" value="SNP"/>   <constraint path="Allele.type" code="C" op="=" value="Predicted_SNP"/> </query>""",
+'query_26': """<query name="" model="genomic" view="Allele.primaryIdentifier Allele.symbol" longDescription="" sortOrder="Allele.primaryIdentifier asc"constraintLogic="A and B"><constraint path="Allele.species" code="A" op="=" value="Caenorhabditis elegans"/><constraint path="Allele.phenotype"code="B" op="IS NOT NULL"/> </query>""",
 }
 
 # %3Cquery%20model%3D%22genomic%22%20view%3D%22RNAi.primaryIdentifier%20RNAi.inhibitsGene.primaryIdentifier%20RNAi.inhibitsGene.secondaryIdentifier%20RNAi.inhibitsGene.symbol%20RNAi.organism.name%20RNAi.strain.primaryIdentifier%22%20sortOrder%3D%22RNAi.primaryIdentifier%20ASC%22%20name%3D%22rnai_phenotype%22%20%3E%0A%20%20%3Cjoin%20path%3D%22RNAi.organism%22%20style%3D%22OUTER%22%2F%3E%0A%20%20%3Cjoin%20path%3D%22RNAi.strain%22%20style%3D%22OUTER%22%2F%3E%0A%20%20%3Cconstraint%20path%3D%22RNAi.phenotype_not_observed.identifier%22%20op%3D%22%3D%22%20value%3D%22WBPhenotype%3A0000535%22%20code%3D%22A%22%20%2F%3E%0A%3C%2Fquery%3E%0A&trail=%7Cquery&method=xml

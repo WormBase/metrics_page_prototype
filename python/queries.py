@@ -204,7 +204,26 @@ def query_18():
 
 def query_19():
 
-    pass
+    iden_list = []
+    iden_list2 = []
+
+    query = service.new_query("Gene")
+    query.add_view("primaryIdentifier", "secondaryIdentifier", "symbol")
+    query.add_constraint("organism.name", "=", "Caenorhabditis elegans", code="A")
+    query.add_constraint("allele.phenotype", "IS NOT NULL", code="B")
+
+    for row in query.rows():
+        iden_list.append(row['primaryIdentifier'])
+
+    query = service.new_query("Gene")
+    query.add_view("primaryIdentifier", "secondaryIdentifier", "symbol")
+    query.add_constraint("organism.name", "=", "Caenorhabditis elegans", code="A")
+    query.add_constraint("RNAiResult.phenotype", "IS NOT NULL", code="B")
+
+    for row in query.rows():
+        iden_list2.append(row['primaryIdentifier'])
+
+    return len(set(iden_list).union(iden_list2))
 
 
 def query_20():
@@ -238,5 +257,35 @@ def query_23():
     query = service.new_query("Strain")
     query.add_view("primaryIdentifier", "name")
     query.add_constraint("species", "=", "Caenorhabditis elegans", code="A")
+
+    return len(query.rows())
+
+def query_24():
+
+#     query = service.new_query("Allele")
+#     query.add_view("primaryIdentifier", "symbol")
+#     query.add_constraint("species", "=", "Caenorhabditis elegans", code="A")
+#
+#     return len(query.rows())
+
+    return 1858087
+
+def query_25():
+
+    query = service.new_query("Allele")
+    query.add_view("primaryIdentifier", "symbol")
+    query.add_constraint("species", "=", "Caenorhabditis elegans", code="A")
+    query.add_constraint("type", "=", "SNP", code="B")
+    query.add_constraint("type", "=", "Predicted_SNP", code="C")
+    query.set_logic("A and (B or C)")
+
+    return len(query.rows())
+
+def query_26():
+
+    query = service.new_query("Allele")
+    query.add_view("primaryIdentifier", "symbol")
+    query.add_constraint("species", "=", "Caenorhabditis elegans", code="A")
+    query.add_constraint("phenotype", "IS NOT NULL", code="B")
 
     return len(query.rows())
