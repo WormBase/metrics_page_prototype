@@ -1,0 +1,3 @@
+<query model="genomic" view="Gene.primaryIdentifier Gene.organism.species" sortOrder="Gene.primaryIdentifier ASC" >
+    <constraint path="Gene.organism.species" op="=" value="elegans" code="A" />
+</query>
