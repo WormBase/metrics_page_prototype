@@ -42,26 +42,26 @@ section = {
         'query_04': 'section_01',
         'query_05': 'section_01',
         'query_06': 'section_01',
-        'query_07': 'section_01',
-        'query_08': 'section_01',
-        'query_09': 'section_01',
-        'query_10': 'section_01',
-        'query_11': 'section_01',
-        'query_12': 'section_01',
-        'query_13': 'section_01',
-        'query_14': 'section_01',
-        'query_15': 'section_01',
-        'query_16': 'section_01',
-        'query_17': 'section_01',
-        'query_18': 'section_01',
-        'query_19': 'section_01',
-        'query_20': 'section_01',
-        'query_21': 'section_01',
-        'query_22': 'section_01',
-        'query_23': 'section_01',
-        'query_24': 'section_01',
-        'query_25': 'section_01',
-        'query_26': 'section_01',
+        'query_07': 'section_02',
+        'query_08': 'section_02',
+        'query_09': 'section_02',
+        'query_10': 'section_02',
+        'query_11': 'section_02',
+        'query_12': 'section_02',
+        'query_13': 'section_02',
+        'query_14': 'section_02',
+        'query_15': 'section_02',
+        'query_16': 'section_02',
+        'query_17': 'section_03',
+        'query_18': 'section_03',
+        'query_19': 'section_03',
+        'query_20': 'section_04',
+        'query_21': 'section_05',
+        'query_22': 'section_05',
+        'query_23': 'section_06',
+        'query_24': 'section_07',
+        'query_25': 'section_07',
+        'query_26': 'section_07',
 
 }
 xml = {
@@ -111,16 +111,45 @@ if __name__ == '__main__':
     prepend = 'http://intermine.wormbase.org/tools/wormmine/loadQuery.do?skipBuilder=true&query='
     append = '%0A&trail=%7Cquery&method=xml'
 
+    output_sec1 = open('../section_01.json', 'w')
+    output_sec2 = open('../section_02.json', 'w')
+    output_sec3 = open('../section_03.json', 'w')
+    output_sec4 = open('../section_04.json', 'w')
+    output_sec5 = open('../section_05.json', 'w')
+    output_sec6 = open('../section_06.json', 'w')
+    output_sec7 = open('../section_07.json', 'w')
+
     print('Running')
     all_queries = run_queries()
-    results = {}
+    results_sec1, results_sec2, results_sec3 = {}, {}, {}
+    results_sec4, results_sec5, results_sec6, results_sec7 = {}, {}, {}, {}
     for q in all_queries:
         print(q)
         qurl = urllib.parse.quote(xml[q[0]])
-        results[q[0]] = {'value': q[1], 'title': query_title[q[0]], 'section': section[q[0]], 'url': prepend + qurl + append}
+        if section[q[0]] == 'section_01':
+            results_sec1[q[0]] = {'value': q[1], 'title': query_title[q[0]], 'url': prepend + qurl + append}
+        elif section[q[0]] == 'section_02':
+            results_sec2[q[0]] = {'value': q[1], 'title': query_title[q[0]], 'url': prepend + qurl + append}
+        elif section[q[0]] == 'section_03':
+            results_sec3[q[0]] = {'value': q[1], 'title': query_title[q[0]], 'url': prepend + qurl + append}
+        elif section[q[0]] == 'section_04':
+            results_sec4[q[0]] = {'value': q[1], 'title': query_title[q[0]], 'url': prepend + qurl + append}
+        elif section[q[0]] == 'section_05':
+            results_sec5[q[0]] = {'value': q[1], 'title': query_title[q[0]], 'url': prepend + qurl + append}
+        elif section[q[0]] == 'section_06':
+            results_sec6[q[0]] = {'value': q[1], 'title': query_title[q[0]], 'url': prepend + qurl + append}
+        elif section[q[0]] == 'section_07':
+            results_sec7[q[0]] = {'value': q[1], 'title': query_title[q[0]], 'url': prepend + qurl + append}
 
-    print(results)
-    output_json = open('../results.json', 'w')
-    json.dump(results, output_json)
-    output_json.close()
+    json.dump(results_sec1, output_sec1)
+    json.dump(results_sec2, output_sec2)
+    json.dump(results_sec3, output_sec3)
+    json.dump(results_sec4, output_sec4)
+    json.dump(results_sec5, output_sec5)
+    json.dump(results_sec6, output_sec6)
+    json.dump(results_sec7, output_sec7)
+
+#     output_json = open('../results.json', 'w')
+#     json.dump(results, output_json)
+#     output_json.close()
 

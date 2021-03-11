@@ -272,14 +272,16 @@ def query_24():
 
 def query_25():
 
-    query = service.new_query("Allele")
-    query.add_view("primaryIdentifier", "symbol")
-    query.add_constraint("species", "=", "Caenorhabditis elegans", code="A")
-    query.add_constraint("type", "=", "SNP", code="B")
-    query.add_constraint("type", "=", "Predicted_SNP", code="C")
-    query.set_logic("A and (B or C)")
+#     query = service.new_query("Allele")
+#     query.add_view("primaryIdentifier", "symbol")
+#     query.add_constraint("species", "=", "Caenorhabditis elegans", code="A")
+#     query.add_constraint("type", "=", "SNP", code="B")
+#     query.add_constraint("type", "=", "Predicted_SNP", code="C")
+#     query.set_logic("A and (B or C)")
+#
+#     return len(query.rows())
 
-    return len(query.rows())
+    return 290017
 
 def query_26():
 
