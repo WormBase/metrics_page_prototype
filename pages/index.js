@@ -7,15 +7,18 @@ import queries5 from '../section_05.json'
 import queries6 from '../section_06.json'
 import queries7 from '../section_07.json'
 
+import Image from 'next/image'
+
 console.log(queries)
 const Queries = () => (
 
     <div>
-        <img id="logo" src="model/images/logo_wb.png" height="34px" alt="Logo" />
+        <br />
+        <img id="logo" src="logo_wormbase_gradient.svg" height="34px" alt="Logo" />
         <div>
             <br />
             <h1>WormBase metrics</h1>
-            <h4>Genes</h4>
+            <h4 class="ui-corner-top widget-header">Genes</h4>
             <ul>
                 {Object.entries(queries).map((value, index) => {
                     return <li  key={index}>
@@ -31,14 +34,12 @@ const Queries = () => (
                 })}
             </ul>
             <br />
-            <h4 className='font-mono  text-gray-800 p-5 bg-gray-200'>RNA</h4>
+            <h4 className="ui-corner-top widget-header">RNA</h4>
             <ul>
                 {Object.entries(queries2).map((value, index) => {
-                    return <li  key={index}>
+                    return <li  class="widget" key={index}>
                         <div>
-                            <div>{value[1]['title']}</div>
-                            <div>{value[1]['value']}</div>
-                            <div>
+                            <div>{value[1]['title']} {value[1]['value']}
                                 <Link href={value[1]['url']} passHref={true}>
                                     <img src='https://raw.githubusercontent.com/angular/material-icons/master/icons/system_icons/content/res-export/ic_link_24px.svg' /></Link>
                             </div>
@@ -47,7 +48,7 @@ const Queries = () => (
                 })}
             </ul>
             <br />
-            <h4 className='font-mono  text-gray-800 p-5 bg-gray-200'>GO</h4>
+            <h4 className="ui-corner-top widget-header">GO</h4>
             <ul>
                 {Object.entries(queries3).map((value, index) => {
                     return <li key={index}>
@@ -64,7 +65,7 @@ const Queries = () => (
                 })}
             </ul>
             <br />
-            <h4 className='font-mono  text-gray-800 p-5 bg-gray-200'>Chromosomes</h4>
+            <h4 className="ui-corner-top widget-header">Chromosomes</h4>
             <ul>
                 {Object.entries(queries4).map((value, index) => {
                     return <li key={index}>
@@ -81,7 +82,7 @@ const Queries = () => (
                 })}
             </ul>
             <br />
-            <h4 className='font-mono  text-gray-800 p-5 bg-gray-200'>Proteins</h4>
+            <h4 className="ui-corner-top widget-header">Proteins</h4>
             <ul>
                 {Object.entries(queries5).map((value, index) => {
                     return <li key={index}>
@@ -98,7 +99,7 @@ const Queries = () => (
                 })}
             </ul>
             <br />
-            <h4 className='font-mono  text-gray-800 p-5 bg-gray-200'>Strains</h4>
+            <h4 className="ui-corner-top widget-header">Strains</h4>
             <ul>
                 {Object.entries(queries6).map((value, index) => {
                     return <li key={index}>
@@ -115,7 +116,7 @@ const Queries = () => (
                 })}
             </ul>
             <br />
-            <h4 className='font-mono  text-gray-800 p-5 bg-gray-200'>Alelles</h4>
+            <h4 className="ui-corner-top widget-header">Alelles</h4>
             <ul>
                 {Object.entries(queries7).map((value, index) => {
                     return <li key={index}>
@@ -245,35 +246,31 @@ const Queries = () => (
                 <div className="credit-badge-container">
                     <div className="credit-badge"><a href="http://www.alliancegenome.org/"
                                                      target="_blank"><span className="wb-ext"><img width="200px"
-                                                                                                   src="/img/agr_founding_member_badge.png"
+                                                                                                   src="agr_founding_member_badge.png"
                                                                                                    alt="Alliance of Genome Resources"/></span></a>
                     </div>
                     <div className="credit-badge"><a href="http://www.caltech.edu/"
                                                      target="_blank"><span className="wb-ext"><img width="150px"
-                                                                                                   src="/img/caltech_logo.png"
+                                                                                                   src="caltech_logo.png"
                                                                                                    alt="Caltech"/></span></a>
                     </div>
                     <div className="credit-badge"><a href="https://www.ebi.ac.uk/"
                                                      target="_blank"><span className="wb-ext"><img width="200px"
-                                                                                                   src="/img/embl_ebi_logo_white.svg"
+                                                                                                   src="embl_ebi_logo_white.svg"
                                                                                                    alt="European Bioinformatics Institute"/></span></a>
                     </div>
-                    <div className="credit-badge"><a href="https://oicr.on.ca/"
-                                                     target="_blank"><span className="wb-ext"><img height="65px"
-                                                                                                   src="/img/oicr_logo_white.png"
+                    <div className="credit-badge"><a href="https://oicr.on.ca/" target="_blank"><span className="wb-ext"><img height="65px"
+                                                                                                   src="oicr_logo_white.png"
                                                                                                    alt="Ontario Institute for Cancer Research"/></span></a>
                     </div>
                 </div>
                 <div className="credit-text-container">
         <span>
-          WormBase is supported by grant #U24 HG002223 from the <a href="http://www.genome.gov/"
-                                                                   target="_blank"><span className="wb-ext">National Human Genome Research Institute</span></a> </span><br/>
-                    <span>at the <a href="http://www.nih.gov/"
-                                    target="_blank"><span className="wb-ext">US National Institutes of Health</span></a>,
-          the <a href="http://www.mrc.ac.uk/"
-                 target="_blank"><span className="wb-ext">UK Medical Research Council</span></a> and the <a
-                            href="http://www.bbsrc.ac.uk/home/home.aspx"
-                            target="_blank"><span className="wb-ext">UK Biotechnology and Biological Sciences Research Council</span></a>.
+          WormBase is supported by grant #U24 HG002223 from the
+            <a href="http://www.genome.gov/" target="_blank"><span className="wb-ext">National Human Genome Research Institute</span></a> </span><br/>
+                    <span>at the <a href="http://www.nih.gov/" target="_blank"><span className="wb-ext">US National Institutes of Health</span></a>,
+          the <a href="http://www.mrc.ac.uk/" target="_blank"><span className="wb-ext">UK Medical Research Council</span></a> and the
+              <a href="http://www.bbsrc.ac.uk/home/home.aspx" target="_blank"><span className="wb-ext">UK Biotechnology and Biological Sciences Research Council</span></a>.
         </span>
                 </div>
             </div>
