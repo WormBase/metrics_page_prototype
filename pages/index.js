@@ -7,8 +7,6 @@ import queries5 from '../section_05.json'
 import queries6 from '../section_06.json'
 import queries7 from '../section_07.json'
 
-import Image from 'next/image'
-
 console.log(queries)
 const Queries = () => (
 
