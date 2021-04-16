@@ -31,7 +31,7 @@ const Queries = () => (
                 })}
             </ul>
             <br />
-            <h4 className="ui-corner-top widget-header">RNA</h4>
+            <h4 className="ui-corner-top widget-header text-2xl p-3">RNA</h4>
             <ul>
                 {Object.entries(queries2).map((value, index) => {
                     return <li  key={index}>
@@ -47,7 +47,7 @@ const Queries = () => (
                 })}
             </ul>
             <br />
-            <h4 className="ui-corner-top widget-header">GO</h4>
+            <h4 className="ui-corner-top widget-header text-2xl p-3">GO</h4>
             <ul>
                 {Object.entries(queries3).map((value, index) => {
                     return <li  key={index}>
@@ -63,7 +63,7 @@ const Queries = () => (
                 })}
             </ul>
             <br />
-            <h4 className="ui-corner-top widget-header">Chromosomes</h4>
+            <h4 className="ui-corner-top widget-header text-2xl p-3">Chromosomes</h4>
             <ul>
                 {Object.entries(queries4).map((value, index) => {
                     return <li  key={index}>
@@ -79,7 +79,7 @@ const Queries = () => (
                 })}
             </ul>
             <br />
-            <h4 className="ui-corner-top widget-header">Proteins</h4>
+            <h4 className="ui-corner-top widget-header text-2xl p-3">Proteins</h4>
             <ul>
                 {Object.entries(queries5).map((value, index) => {
                     return <li  key={index}>
@@ -95,7 +95,7 @@ const Queries = () => (
                 })}
             </ul>
             <br />
-            <h4 className="ui-corner-top widget-header">Strains</h4>
+            <h4 className="ui-corner-top widget-header text-2xl p-3">Strains</h4>
             <ul>
                 {Object.entries(queries6).map((value, index) => {
                     return <li  key={index}>
@@ -111,7 +111,7 @@ const Queries = () => (
                 })}
             </ul>
             <br />
-            <h4 className="ui-corner-top widget-header">Alelles</h4>
+            <h4 className="ui-corner-top widget-header text-2xl p-3">Alelles</h4>
             <ul>
                 {Object.entries(queries7).map((value, index) => {
                     return <li  key={index}>
