@@ -1,5 +1,5 @@
 // import '../styles/globals.css'
-// import "../styles/tailwind.css";
+import "../styles/tailwind.css";
 import "../styles/wormbase.min.css"
 
 

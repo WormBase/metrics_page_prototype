@@ -7,23 +7,22 @@ import queries5 from '../section_05.json'
 import queries6 from '../section_06.json'
 import queries7 from '../section_07.json'
 
-console.log(queries)
 const Queries = () => (
-
-    <div>
+<div>
+    <div class="container mx-auto">
         <br />
         <img id="logo" src="logo_wormbase_gradient.svg" height="34px" alt="Logo" />
         <div>
             <br />
             <h1>WormBase metrics</h1>
-            <h4 class="ui-corner-top widget-header">Genes</h4>
+            <h4 class="ui-corner-top widget-header text-2xl p-3">Genes</h4>
             <ul>
                 {Object.entries(queries).map((value, index) => {
                     return <li  key={index}>
-                        <div>
-                            <div>{value[1]['title']}</div>
-                            <div>{value[1]['value']}</div>
-                            <div>
+                        <div className='grid grid-cols-12 gap-5 hover:bg-blue-100'>
+                            <div class='col-start-1 col-span-5'>{value[1]['title']}</div>
+                            <div class='col-start-11 col-span-1 text-right'>{value[1]['value']}</div>
+                            <div class='col-start-12 col-span-1 text-right'>
                                 <Link href={value[1]['url']} passHref={true}>
                                     <img src='https://raw.githubusercontent.com/angular/material-icons/master/icons/system_icons/content/res-export/ic_link_24px.svg' /></Link>
                             </div>
@@ -35,9 +34,11 @@ const Queries = () => (
             <h4 className="ui-corner-top widget-header">RNA</h4>
             <ul>
                 {Object.entries(queries2).map((value, index) => {
-                    return <li  class="widget" key={index}>
-                        <div>
-                            <div>{value[1]['title']} {value[1]['value']}
+                    return <li  key={index}>
+                        <div className='grid grid-cols-12 gap-5 hover:bg-blue-100'>
+                            <div class='col-start-1 col-span-5'>{value[1]['title']}</div>
+                            <div class='col-start-11 col-span-1 text-right'>{value[1]['value']}</div>
+                            <div class='col-start-12 col-span-1 text-right'>
                                 <Link href={value[1]['url']} passHref={true}>
                                     <img src='https://raw.githubusercontent.com/angular/material-icons/master/icons/system_icons/content/res-export/ic_link_24px.svg' /></Link>
                             </div>
@@ -49,14 +50,13 @@ const Queries = () => (
             <h4 className="ui-corner-top widget-header">GO</h4>
             <ul>
                 {Object.entries(queries3).map((value, index) => {
-                    return <li key={index}>
-                        <div>
-                            <div>{value[1]['title']}</div>
-                            <div>{value[1]['value']}</div>
-                            <div>
+                    return <li  key={index}>
+                        <div className='grid grid-cols-12 gap-5 hover:bg-blue-100'>
+                            <div class='col-start-1 col-span-5'>{value[1]['title']}</div>
+                            <div class='col-start-11 col-span-1 text-right'>{value[1]['value']}</div>
+                            <div class='col-start-12 col-span-1 text-right'>
                                 <Link href={value[1]['url']} passHref={true}>
-                                    <img
-                                        src='https://raw.githubusercontent.com/angular/material-icons/master/icons/system_icons/content/res-export/ic_link_24px.svg'/></Link>
+                                    <img src='https://raw.githubusercontent.com/angular/material-icons/master/icons/system_icons/content/res-export/ic_link_24px.svg' /></Link>
                             </div>
                         </div>
                     </li>
@@ -66,14 +66,13 @@ const Queries = () => (
             <h4 className="ui-corner-top widget-header">Chromosomes</h4>
             <ul>
                 {Object.entries(queries4).map((value, index) => {
-                    return <li key={index}>
-                        <div>
-                            <div>{value[1]['title']}</div>
-                            <div>{value[1]['value']}</div>
-                            <div>
+                    return <li  key={index}>
+                        <div className='grid grid-cols-12 gap-5 hover:bg-blue-100'>
+                            <div class='col-start-1 col-span-5'>{value[1]['title']}</div>
+                            <div class='col-start-11 col-span-1 text-right'>{value[1]['value']}</div>
+                            <div class='col-start-12 col-span-1 text-right'>
                                 <Link href={value[1]['url']} passHref={true}>
-                                    <img
-                                        src='https://raw.githubusercontent.com/angular/material-icons/master/icons/system_icons/content/res-export/ic_link_24px.svg'/></Link>
+                                    <img src='https://raw.githubusercontent.com/angular/material-icons/master/icons/system_icons/content/res-export/ic_link_24px.svg' /></Link>
                             </div>
                         </div>
                     </li>
@@ -83,14 +82,13 @@ const Queries = () => (
             <h4 className="ui-corner-top widget-header">Proteins</h4>
             <ul>
                 {Object.entries(queries5).map((value, index) => {
-                    return <li key={index}>
-                        <div>
-                            <div>{value[1]['title']}</div>
-                            <div>{value[1]['value']}</div>
-                            <div>
+                    return <li  key={index}>
+                        <div className='grid grid-cols-12 gap-5 hover:bg-blue-100'>
+                            <div class='col-start-1 col-span-5'>{value[1]['title']}</div>
+                            <div class='col-start-11 col-span-1 text-right'>{value[1]['value']}</div>
+                            <div class='col-start-12 col-span-1 text-right'>
                                 <Link href={value[1]['url']} passHref={true}>
-                                    <img
-                                        src='https://raw.githubusercontent.com/angular/material-icons/master/icons/system_icons/content/res-export/ic_link_24px.svg'/></Link>
+                                    <img src='https://raw.githubusercontent.com/angular/material-icons/master/icons/system_icons/content/res-export/ic_link_24px.svg' /></Link>
                             </div>
                         </div>
                     </li>
@@ -100,14 +98,13 @@ const Queries = () => (
             <h4 className="ui-corner-top widget-header">Strains</h4>
             <ul>
                 {Object.entries(queries6).map((value, index) => {
-                    return <li key={index}>
-                        <div>
-                            <div>{value[1]['title']}</div>
-                            <div>{value[1]['value']}</div>
-                            <div>
+                    return <li  key={index}>
+                        <div className='grid grid-cols-12 gap-5 hover:bg-blue-100'>
+                            <div class='col-start-1 col-span-5'>{value[1]['title']}</div>
+                            <div class='col-start-11 col-span-1 text-right'>{value[1]['value']}</div>
+                            <div class='col-start-12 col-span-1 text-right'>
                                 <Link href={value[1]['url']} passHref={true}>
-                                    <img
-                                        src='https://raw.githubusercontent.com/angular/material-icons/master/icons/system_icons/content/res-export/ic_link_24px.svg'/></Link>
+                                    <img src='https://raw.githubusercontent.com/angular/material-icons/master/icons/system_icons/content/res-export/ic_link_24px.svg' /></Link>
                             </div>
                         </div>
                     </li>
@@ -117,20 +114,21 @@ const Queries = () => (
             <h4 className="ui-corner-top widget-header">Alelles</h4>
             <ul>
                 {Object.entries(queries7).map((value, index) => {
-                    return <li key={index}>
-                        <div>
-                            <div>{value[1]['title']}</div>
-                            <div>{value[1]['value']}</div>
-                            <div>
+                    return <li  key={index}>
+                        <div className='grid grid-cols-12 gap-5 hover:bg-blue-100'>
+                            <div class='col-start-1 col-span-5'>{value[1]['title']}</div>
+                            <div class='col-start-11 col-span-1 text-right'>{value[1]['value']}</div>
+                            <div class='col-start-12 col-span-1 text-right'>
                                 <Link href={value[1]['url']} passHref={true}>
-                                    <img
-                                        src='https://raw.githubusercontent.com/angular/material-icons/master/icons/system_icons/content/res-export/ic_link_24px.svg'/></Link>
+                                    <img src='https://raw.githubusercontent.com/angular/material-icons/master/icons/system_icons/content/res-export/ic_link_24px.svg' /></Link>
                             </div>
                         </div>
                     </li>
                 })}
             </ul>
         </div>
+    </div>
+    <div>
         <div id="footer">
             <div id="footer-nav">
                 <div className="footer-column">
@@ -277,7 +275,7 @@ const Queries = () => (
         </div>
     </div>
 
-
+</div>
 
 
 
