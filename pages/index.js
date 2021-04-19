@@ -11,7 +11,7 @@ const Queries = () => (
 <div>
     <div class="container mx-auto max-w-3xl">
         <br />
-        <img id="logo" src="logo_wormbase_gradient.svg" height="34px" alt="Logo" />
+        <img id="logo" src="logo_wormbase_gradient.svg" height="34px" width="300px" alt="Logo" />
         <div>
             <br />
             <h1>WormBase metrics</h1>
@@ -255,7 +255,7 @@ const Queries = () => (
                                                                                                    src="embl_ebi_logo_white.svg"
                                                                                                    alt="European Bioinformatics Institute"/></span></a>
                     </div>
-                    <div className="credit-badge"><a href="https://oicr.on.ca/" target="_blank"><span className="wb-ext"><img height="65px"
+                    <div className="credit-badge"><a href="https://oicr.on.ca/" target="_blank"><span className="wb-ext"><img height="30px" width="100px"
                                                                                                    src="oicr_logo_white.png"
                                                                                                    alt="Ontario Institute for Cancer Research"/></span></a>
                     </div>
