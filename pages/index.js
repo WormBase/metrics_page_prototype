@@ -22,10 +22,6 @@ const Queries = () => (
                         <div className='grid grid-cols-12 gap-5 hover:bg-blue-100'>
                             <div class='col-start-1 col-span-7'>{value[1]['title']}</div>
                             <div class='col-start-11 col-span-1 text-right'><Link href={value[1]['url']} passHref={true}><a>{value[1]['value']}</a></Link></div>
-                            {/*<div class='col-start-12 col-span-1 text-right'>*/}
-                            {/*    <Link href={value[1]['url']} passHref={true}>*/}
-                            {/*        <img src='https://raw.githubusercontent.com/angular/material-icons/master/icons/system_icons/content/res-export/ic_link_24px.svg' /></Link>*/}
-                            {/*</div>*/}
                         </div>
                     </li>
                 })}
@@ -37,11 +33,7 @@ const Queries = () => (
                     return <li  key={index}>
                         <div className='grid grid-cols-12 gap-5 hover:bg-blue-100'>
                             <div class='col-start-1 col-span-7'>{value[1]['title']}</div>
-                            <div class='col-start-11 col-span-1 text-right'>{value[1]['value']}</div>
-                            <div class='col-start-12 col-span-1 text-right'>
-                                <Link href={value[1]['url']} passHref={true}>
-                                    <img src='https://raw.githubusercontent.com/angular/material-icons/master/icons/system_icons/content/res-export/ic_link_24px.svg' /></Link>
-                            </div>
+                            <div class='col-start-11 col-span-1 text-right'><Link href={value[1]['url']} passHref={true}><a>{value[1]['value']}</a></Link></div>
                         </div>
                     </li>
                 })}
@@ -53,11 +45,7 @@ const Queries = () => (
                     return <li  key={index}>
                         <div className='grid grid-cols-12 gap-5 hover:bg-blue-100'>
                             <div class='col-start-1 col-span-7'>{value[1]['title']}</div>
-                            <div class='col-start-11 col-span-1 text-right'>{value[1]['value']}</div>
-                            <div class='col-start-12 col-span-1 text-right'>
-                                <Link href={value[1]['url']} passHref={true}>
-                                    <img src='https://raw.githubusercontent.com/angular/material-icons/master/icons/system_icons/content/res-export/ic_link_24px.svg' /></Link>
-                            </div>
+                            <div class='col-start-11 col-span-1 text-right'><Link href={value[1]['url']} passHref={true}><a>{value[1]['value']}</a></Link></div>
                         </div>
                     </li>
                 })}
@@ -69,11 +57,7 @@ const Queries = () => (
                     return <li  key={index}>
                         <div className='grid grid-cols-12 gap-5 hover:bg-blue-100'>
                             <div class='col-start-1 col-span-7'>{value[1]['title']}</div>
-                            <div class='col-start-11 col-span-1 text-right'>{value[1]['value']}</div>
-                            <div class='col-start-12 col-span-1 text-right'>
-                                <Link href={value[1]['url']} passHref={true}>
-                                    <img src='https://raw.githubusercontent.com/angular/material-icons/master/icons/system_icons/content/res-export/ic_link_24px.svg' /></Link>
-                            </div>
+                            <div class='col-start-11 col-span-1 text-right'><Link href={value[1]['url']} passHref={true}><a>{value[1]['value']}</a></Link></div>
                         </div>
                     </li>
                 })}
@@ -85,11 +69,7 @@ const Queries = () => (
                     return <li  key={index}>
                         <div className='grid grid-cols-12 gap-5 hover:bg-blue-100'>
                             <div class='col-start-1 col-span-7'>{value[1]['title']}</div>
-                            <div class='col-start-11 col-span-1 text-right'>{value[1]['value']}</div>
-                            <div class='col-start-12 col-span-1 text-right'>
-                                <Link href={value[1]['url']} passHref={true}>
-                                    <img src='https://raw.githubusercontent.com/angular/material-icons/master/icons/system_icons/content/res-export/ic_link_24px.svg' /></Link>
-                            </div>
+                            <div class='col-start-11 col-span-1 text-right'><Link href={value[1]['url']} passHref={true}><a>{value[1]['value']}</a></Link></div>
                         </div>
                     </li>
                 })}
@@ -101,11 +81,7 @@ const Queries = () => (
                     return <li  key={index}>
                         <div className='grid grid-cols-12 gap-5 hover:bg-blue-100'>
                             <div class='col-start-1 col-span-7'>{value[1]['title']}</div>
-                            <div class='col-start-11 col-span-1 text-right'>{value[1]['value']}</div>
-                            <div class='col-start-12 col-span-1 text-right'>
-                                <Link href={value[1]['url']} passHref={true}>
-                                    <img src='https://raw.githubusercontent.com/angular/material-icons/master/icons/system_icons/content/res-export/ic_link_24px.svg' /></Link>
-                            </div>
+                            <div class='col-start-11 col-span-1 text-right'><Link href={value[1]['url']} passHref={true}><a>{value[1]['value']}</a></Link></div>
                         </div>
                     </li>
                 })}
@@ -117,15 +93,13 @@ const Queries = () => (
                     return <li  key={index}>
                         <div className='grid grid-cols-12 gap-5 hover:bg-blue-100'>
                             <div class='col-start-1 col-span-7'>{value[1]['title']}</div>
-                            <div class='col-start-11 col-span-1 text-right'>{value[1]['value']}</div>
-                            <div class='col-start-12 col-span-1 text-right'>
-                                <Link href={value[1]['url']} passHref={true}>
-                                    <img src='https://raw.githubusercontent.com/angular/material-icons/master/icons/system_icons/content/res-export/ic_link_24px.svg' /></Link>
-                            </div>
+                            <div class='col-start-11 col-span-1 text-right'><Link href={value[1]['url']} passHref={true}><a>{value[1]['value']}</a></Link></div>
                         </div>
                     </li>
                 })}
             </ul>
+            <br/>
+            <br/>
         </div>
     </div>
     <div>
